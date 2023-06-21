@@ -5,7 +5,7 @@ import styles from "./askList.module.css";
 import { sendContactForm } from "../utils/api";
 
 import logo from "../../../photo/photo-1/logo_watsupp.png";
-import Image from 'next/image';
+import Image from "next/image";
 
 const initialValues = {
   name: "",
@@ -53,15 +53,6 @@ const AskList = () => {
       ],
     },
     {
-      questionText: "Выберите производителя 2",
-      answer: [
-        { id: 20, answerText: "njjjjn" },
-        { id: 21, answerText: "Что то там 2 2" },
-        { id: 22, answerText: "Что то там 3 4" },
-        { id: 23, answerText: " 4 5" },
-      ],
-    },
-    {
       questionText: "Контактные данные",
       answer: [
         { id: 24, answerTextInput: "Ваше имя", other: "name" },
@@ -87,21 +78,10 @@ const AskList = () => {
 
   const [state, setState] = useState(initialState);
   const { values } = state;
-
   const [answer, setAnswer] = useState([]);
-
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [lastQuestion, setLastQuestion] = useState(false);
-
-  const [arr, setArr] = useState([1, 2, 3, 4, 5, 6]);
-
-  // const iterator = (start, stop) => {
-  //   for (let i = start; i <= stop; i++) {
-  //     arr.push(i);
-  //   }
-  // };
-
-  // iterator(1, questions.length);
+  const [arr, setArr] = useState([1, 2, 3, 4, 5]);
 
   const changeChoseHandler = (text) => {
     if (answer.includes(text)) {
@@ -114,13 +94,13 @@ const AskList = () => {
   };
 
   const nextQuestionHandler = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     console.log(currentQuestion, questions.length);
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     }
 
-    if (currentQuestion + 2 === questions.length) {
+    if (currentQuestion + 3 === questions.length) {
       setLastQuestion(true);
     }
   };
@@ -151,6 +131,8 @@ const AskList = () => {
     setState((prev) => ({
       ...prev,
     }));
+    nextQuestionHandler();
+    setLastQuestion(false);
     await sendContactForm(values);
   };
 
@@ -182,7 +164,12 @@ const AskList = () => {
             key={i.id}
             className={i?.answerTextInput ? styles.fiveSlide : ""}>
             {i?.answerText && !i?.answerTextWithOutCheckBox ? (
-              <input className={styles.checkBox} type="checkbox"></input>
+              <input
+                onClick={() => {
+                  changeChoseHandler(i.answerText);
+                }}
+                className={styles.checkBox}
+                type="checkbox"></input>
             ) : (
               ""
             )}
@@ -193,7 +180,9 @@ const AskList = () => {
                 changeChoseHandler(i.answerText);
               }}>
               {i?.answerText || i?.answerTextWithOutCheckBox}
-              {i?.picture && <Image key={"picture"} alt='' width={100} src={logo} />}
+              {i?.picture && (
+                <Image key={"picture"} alt="" width={100} src={logo} />
+              )}
             </p>
             {i?.other && (
               <input
@@ -206,21 +195,27 @@ const AskList = () => {
         ))}
       </div>
 
-      {lastQuestion ? (
+      {lastQuestion && currentQuestion + 1 != questions.length ? (
         <button
           className={styles.submitButton}
           type="submit"
           onClick={onSubmit}>
-          End
+          End Next
         </button>
-      ) : (
+      ) : currentQuestion + 1 != questions.length ? (
         <button className={styles.nextButton} onClick={nextQuestionHandler}>
           Далее
         </button>
+      ) : (
+        ""
       )}
-      <button className={styles.backButton} onClick={backQuestionHandler}>
-        Назад
-      </button>
+      {currentQuestion + 1 != questions.length ? (
+        <button className={styles.backButton} onClick={backQuestionHandler}>
+          Назад
+        </button>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
