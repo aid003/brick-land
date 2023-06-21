@@ -1,0 +1,56 @@
+.questionText {
+	font-size: xx-large;
+	font-weight: 600;
+}
+
+.askItem {
+	font-size: 16px;
+	color: gray;
+}
+
+.numbersContainer {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.number {
+	font-size: large;
+}
+
+.lineContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+}
+
+.line {
+	content: "";
+	width: 20px;
+	height: 3px;
+	border: 1px solid grey;
+}
+
+.active {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: large;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	border: 1px solid grey;
+}
+
+.input {
+
+}
+
+.fiveSlide {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: pink;
+}

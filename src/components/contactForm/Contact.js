@@ -1,13 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 import { sendContactForm } from "../utils/api";
-import { data } from "../quiz/AskList";
-import styles from '../manda.module.css'
 
+import styles from './contact.css';
 const initialValues = {
   email: "",
-  message: "",
-  data: "",
+  message: ""
 };
 
 const initialState = { values: initialValues };
@@ -23,7 +21,6 @@ const Contact = () => {
       values: {
         ...prev.values,
         [target.name]: target.value,
-        data: data,
       },
     }));
   };
@@ -37,26 +34,29 @@ const Contact = () => {
   };
 
   return (
-    <div>
-      <form>
-        <div>
-          <input
-            type="email"
-            name="email"
-            placeholder="Ваш Email"
-            value={values.email}
+    <div id="form_otprav_first" >
+      <form id="form_otprav_main"  >
+        <div  >
+            <input id="form_otprav-first"
+              type="email"
+              name="email"
+              placeholder="Ваше имя"
+              value={values.email}
+              onChange={handleChange}
+            />
+        </div>
+        <div  >
+          <input id="form_otprav-two"
+            type="text"
+            name="message"
+            placeholder="+7 939-210-27"
+            value={values.name}
             onChange={handleChange}
           />
         </div>
-        <input
-          type="text"
-          name="message"
-          placeholder="Ваш пароль"
-          value={values.name}
-          onChange={handleChange}
-        />
-        <button onClick={onSubmit}>Продолжить</button>
+        
       </form>
+      <button onClick={onSubmit} id="button-11"> Продолжить </button>
     </div>
   );
 };
