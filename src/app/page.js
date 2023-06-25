@@ -1,5 +1,5 @@
 "use client";
-import './reset.css'
+//import './reset.css'
 import styless from "./reset.css"
 import styles from "./globals.css";
 import style from "./page.module.css";
