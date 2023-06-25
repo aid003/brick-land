@@ -7,16 +7,35 @@
 	font-family: 'Evolventa-Regular-Bold'; 
 	src: url(/font-alim/Evolventa-BoldOblique.ttf); 
 }
+.form_otprav-first{
+    padding-right: 70px;
+}
+body{
+    overflow-x: hidden;
+}
+#containerFlexbox{
+    overflow-x: hidden;
+}
+
 
 
 #twoContainerSize{
     display: flex;
     flex-direction: row;
 }
+
 #firstContainerRightNAme-top{
     font-size: 24px;
+    font-size: 1.5vw; 
+    
+    height: 50px;
+    display: flex;
+    flex-wrap: nowrap;
     
 }
+
+    
+
 
 
 #rubr{
@@ -43,10 +62,10 @@
     font-size: 16px;
     color: #444444;
     font-weight: 300;
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 9vh;
-    max-height: 9vh;
+    
+    width: 100%;
+    min-height: 10vh;
+    
 }
 #menu-22{
     font-size: "Evolventa-Regular";
@@ -83,13 +102,16 @@
     left: 0;
     display: flex;
     justify-content: space-between;
-    max-width: 1420px;
+    max-width: 1920px;
     width: 100%;
+    
 }
 #firstContainerDown_main{
     display: flex;
     justify-content: space-around;
+    align-items: center;
     max-width: 1420px;
+    
     width: 100%;
 }
 
@@ -108,6 +130,9 @@
 #button-11{
     color: #E26007;
 }
+#firstContainerPanelContent{
+    border-bottom: 3px solid grey;
+}
 
 .container-size{
     
@@ -117,12 +142,16 @@
     width: auto;
     /* background-color: #F3F3F3; */ 
 }
-/* #fourContainerFirst{
+ #fourContainerFirst{ 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
-} */
+    flex-direction: column;
+    max-width: 481px;
+} 
+#sixContainerRight{
+    margin-top: 10%;
+}
 
 .first-container-panel-content{
     height: 84px;
@@ -168,11 +197,19 @@
     align-self: flex-end;
     display: flex;
     padding-bottom: 90px;
+    flex-direction: column;
+    font-size: 24px;
+}
+#watsupp{
+    margin-left: 80%;
+}
+#watsup_text{
+    width: 100%;
 }
 
 #logotip_main_1{
     margin: 0%;
-    width: 149px;
+    max-width: 149px;
     height: 59px;
 }
 #firstContainerDown_main{
@@ -205,6 +242,7 @@
     justify-content: space-around;
     flex-direction: row;
     width: 100%;
+    padding: 44px 0 44px 0;
 }
 
 #first-container{
@@ -212,6 +250,7 @@
     flex-direction: column;
     background-color: #efefef;
     width: 100%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -415,6 +454,38 @@
   font-size: 20px;
   font-style:bold ;
 }
+#containerSizeThree{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* @keyframes slidein{
+    from {
+        transform: translateX(0%);
+      }
+    
+    to {
+        background-color: pink;
+        transform: translateX(100%);
+      }
+    } */
+#button-11:hover{
+    animation: slidein;
+    background-color: #E26007;
+    border-color: #E26007;
+    color: #ffffff;
+}
+
+#button_111:hover{
+    animation: slidein;
+    background-color: #E26007;
+    border-color: #E26007;
+    color: #ffffff;
+    
+
+    
+}
+
 #firstContainerDown1{
     display: flex;
     justify-content: center;
@@ -654,14 +725,7 @@ display: flex;
     
 }
 
-#containerSizeFour{
-    width: 1440px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
-    
-}
+
 #Four_container{
     display: flex;
     justify-content: center;
@@ -675,6 +739,37 @@ display: flex;
 #fiveContainerDiv{
     width: auto;
 }
+#logotip_1{
+    max-width: 400px;
+    max-height: 350px;
+   
+   }
+   #h1-three-container{
+    padding-bottom: 41px;
+   }
+   #firstContainerRightNAme-top{
+    padding: 125px 0 45px 0;
+   }
+   
+   #button_111{
+    margin-bottom: 50px;
+
+   }
+   
+
+   /* #firstContainerPanelContent{
+    max-height: 85px;
+   } */
+   #logotip_main_main{
+	margin-top: 11vh;
+    max-width: 704px;
+    max-height: 178px;
+    
+
+}
+#logotip_main_1{
+    margin-left: 2.5%;
+}
 
     
 
@@ -686,9 +781,14 @@ display: flex;
 }
 #containerSizeThree{
     display: flex;
-    width: 1420px;
-    justify-content: space-around;
+    max-width: 1420px;
+    justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 81px;
+    padding-bottom: 81px;
+    
 }
 #text-five{
     display: flex;
@@ -696,11 +796,13 @@ display: flex;
    
 }
 #containerSizeFour{
-    width: 1420px;
-    
+    display: flex;
+    max-width: 1420px;
+    flex-wrap: wrap;
     justify-content: space-between;
-   
+    width: 100%;
 }
+
 #logotip_3{
     max-width: 1440px;
 }
@@ -708,13 +810,56 @@ display: flex;
     width: 1420px;
     justify-content: space-between;
 }
+#main-container0qiz{
+    background-color: #ffffff;
+    max-width: 960px;
+    width: 100%;
+
+    }
+    a{
+        text-decoration: none;
+        color: black;
+        
+    }
+    
+
+    
+a.menu-111{
+    text-decoration: none;
+    color: black;
+}
+    #partner_class{
+        display: none;
+    }
+    #main-container0qiz{
+        width: 90%;
+        height: 50%;
+        /* width: 100%;
+        height: 100%; */
+        
+    }
+    #containerSizeThree{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #menu-phone-container-1{
+        display: flex;
+        align-items: center;
+    }
+    #menu-phone-container-2{
+        display: flex;
+        align-items: center;
+    }
+    #firstbuttcontainer{
+        display: none;
+    }
 
 
 
 
 
 
-@media screen and (max-width: 1208px)  {
+/* @media screen and (max-width: 1208px)  {
 
     #logotip_3{
         max-width: 800px;
@@ -766,14 +911,14 @@ display: flex;
     justify-content: center;
     align-items: center;
 
-    }
+    } */
     /* .two-container{
         height: auto;
         justify-content: center;
         align-items: center;
     } */
-}
-@media screen and (max-width: 700px)  {
+/* } */
+/* @media screen and (max-width: 700px)  {
     
     #logotip_3{
         display: none;
@@ -807,7 +952,8 @@ display: flex;
 
 @media screen and (max-width: 716px)  {
     #logotip_1{
-        width: 330px;;
+        width: 330px;
+        
     }
     #two-container-size{
         display: flex;
@@ -826,9 +972,11 @@ display: flex;
         justify-content: center;
         align-items:center ;
         flex-direction: column;
+        height: 900px;
     }
     #logotip_1{
         display: flex;
+        height: 372px;
         order: 0;
     }
     
@@ -840,7 +988,7 @@ display: flex;
         flex-direction: column;
     } */
 
-}
+/* }
 @media screen and (mi-width: 1400px){
     .container-size-four{
         padding: 0 10px 0 10px;
@@ -936,13 +1084,15 @@ display: flex;
    #logotip_1{
     max-width: 400px;
     max-height: 350px;
-   }
+    /* margin-top: 11vh; */
+   
+   /* }
 
-}
+} */
 
  
  
- @media screen and (max-width: 1437px)  {
+ /* @media screen and (max-width: 1437px)  {
     #logotip_2{
      
      width: 300px;
@@ -967,6 +1117,300 @@ display: flex;
     #nav {
         display: none;
     }
+/* } */ 
+#menu-114{
+    font-weight: 800;
+    font-size: 17px;
+    padding: 50px 0 10px 0;
 }
+#menu-115{
+    font-weight: 800;
+    font-size: 17px;
+    padding: 50px 0 10px 0;
+}
+
+
+
+@media(max-width: 1417px) {
+    #logotip_2{
+        width: 300px;
+        height: 230px;
+    }
+   #logotip_3{
+    max-width: 1240px;
+    height: 379px;
+   }
+    
+}
+
+@media(max-width: 1256px) {
+    #logotip_2{
+        width: 240px;
+        height: 180px;
+    }
+   #logotip_3{
+    max-width: 1000px;
+    height: 279px;
+   }
+   #logotip_main_main{
+    max-width: 604px;
+    height: 150px;
+
+   }
+   #watsupp{
+    width: 45px;
+    height: 45px;
+   }   
+}
+
+
+@media(max-width: 1000px) {
+    #firstbuttcontainer{
+        display: flex;
+
+       
+    }
+
+    #linkArror {
+        color: #E26007;
+    }
+
+    #button_222{
+        width: 351px;
+        height: 52px;
+        
+      border-radius: 20px;
+      background: transparent;
+      background-color: #ffffff;
+      border-color: #E26007;
+      color: #E26007;
+      padding: 8px 16px;
+      font-size: 20px;
+      font-style:bold ;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      text-decoration: none;
+      
+
+    }
+    a.button_222{
+        text-decoration: none;
+    }
+    #button_222:hover{
+        background-color: #E26007;
+        color: #ffffff;
+        text-decoration: none;
+
+    }
+    #button_111{
+        display: none;
+    }
+    #twoContainerSize{
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0 10px 0;
+    }
+    #logotip_3{
+        display: none;
+    }
+    #firstContainerDown_main{
+        flex-direction: column;
+    }
+    #nav{
+        display: none;
+    }
+    #firstContainerPanelContent{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #containerSizeFour{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    #firstContainerDown1{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    #logotip_main_main{
+        display: flex;
+        order: 1;
+    }
+    #logotip_1{
+        display: flex;
+        order: 2;
+    }
+    #firstContainerRightNAme-top{
+        display: flex;
+       
+    }
+    #logo{
+        display: flex;
+    }
+    #firstContainerLight{
+        display: flex;
+    }
+
+    #containerSizeThree{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #threeContainerLeft{
+        margin: 0px;
+    }
+    #containerSizeSix{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #Four_container{
+        display: flex;
+        justify-content: center;
+    }
+    #Telephone{
+        display: none;
+        align-self:center;
+    }
+    #watsupp_class{
+        align-self: self-start;
+        justify-content: center;
+    }
+    #partner_class{
+        display: flex;
+        flex-direction: column;
+    }
+    #one{
+        padding: 10px 0 10px 0;
+    }
+    #logotip_main_main{
+        width: 604px;
+        height: 150px;
+    }
+    #firstContainerRightNAme-top{
+        font-size: 15px;
+    }
+    #logotip_2{
+        padding: 10px 0 10px 0;
+    }
+    #button_111{
+        width: 100%;
+        padding-left: 35%;
+        font-weight: 700;
+    }
+    #p-2{
+        display: none;
+    }
+    #form_otprav-two{
+        width: 484px;
+        height:50px ;
+        padding-left: 1%;
+        
+
+}
+#watsupp_class{
+    margin-left: 20%;
+    display: flex;
+    flex-direction: row;
+    word-wrap: nowrap;
+    
+}
+#h1-three-container-text{
+    align-self: center;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+}
+#threeContainerLeft{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#logotip_main_main{
+    display: flex;
+    align-self: center;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+}
+#containerSizeSix{
+    align-items: flex-start;
+    padding-left: 2%;
+    
+}
+#menu-111{
+    display: flex;
+    font-size: 20px;
+    font-weight: 900;
+    padding: 50px 0 10px 0;
+}
+
+}
+
+
+
+
+@media(max-width: 630px) {
+    #logotip_main_main{
+        width: 390px;
+        height: 130px;
+    }
+    #watsupp_class{
+        align-self: center;
+        margin-left: 0;
+        margin-right: 50%;
+    }
+#h1-three-container{
+    padding-left: 2%;
+}
+#h1-three-container-text{
+    padding-left: 4%;
+    padding-bottom: 3%;
+}
+#firstContainerRightNAme-top{
+    padding: 125px 0 45px 6%;
+   }
+   #h1-three-container-text{
+    padding-left: 11%;
+   }
+#four-container-text{
+    padding-left: 10%;
+}
+
+#h1-three-container{
+    font-size: 45px;
+    padding-left: 10%;
+}
+#four-container-text{
+    font-size: 45px;
+}
+
+
+}
+@media(max-width: 430px) {
+    #logotip_main_main{
+        width: 360px;
+        height: 115px;
+    }
+    #firstContainerRightNAme-top{
+        display: flex;
+        font-size: 17px;
+        font-weight: 600;
+        align-self: center;
+        
+        
+    }
+
+
+}
+
+
+
+
 
 

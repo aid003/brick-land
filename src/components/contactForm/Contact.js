@@ -37,7 +37,8 @@ const Contact = () => {
     <div id="form_otprav_first" >
       <form id="form_otprav_main"  >
         <div  >
-            <input id="form_otprav-first"
+            <input 
+              className="inputLeft"
               type="email"
               name="email"
               placeholder="Ваше имя"

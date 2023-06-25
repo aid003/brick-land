@@ -1,7 +1,11 @@
 "use client";
+// import './reset.css'
+import styless from "./reset.css"
 import styles from "./globals.css";
 import style from "./page.module.css";
+import Link from "next/link";
 import Image from "next/image";
+
 //
 import AskList from "@/components/quiz/AskList";
 import Contact from "@/components/contactForm/Contact";
@@ -9,6 +13,8 @@ import Contact from "@/components/contactForm/Contact";
 import logo from "../../photo/photo-1/Логотип2.png";
 import Keram_block from "../../photo/photo-1/Керамические блоки.png";
 import Min_phone from "../../photo/photo-1/min-phone.png";
+import Min_ph from "../../photo/photo-1/min-phone.png";
+import Min_mess from "../../photo/photo-1/min-message.png";
 import Min_message from "../../photo/photo-1/min-message.png";
 import logo_watsupp from "../../photo/photo-1/logo_watsupp.png";
 import kirpich from "../../photo/photo-1/Кирпичи.png";
@@ -29,12 +35,24 @@ import five_5 from "../../photo/photo-5/5.png";
 import five_6 from "../../photo/photo-5/6.png";
 import five_7 from "../../photo/photo-5/allBLOCK.png";
 ///6 блок
+
+
 import six_1 from "../../photo/photo-6/footer-wats.png";
 import six_2 from "../../photo/photo-6/footer.png";
 import { useState } from "react";
+////партнеры
+
+import one from "../../photo/photo-6/one.jpg";
+import two from "../../photo/photo-6/two.jpg";
+import three from "../../photo/photo-6/four.jpg";
+import four from "../../photo/photo-6/three.jpg";
+import five from "../../photo/photo-6/six.jpg";
+import six from "../../photo/photo-6/five.jpg";
 
 import { RxHamburgerMenu } from "react-icons/rx";
 import {RxCross1} from "react-icons/rx";
+import { useRouter } from 'next/navigation';
+
 
 export default function Home() {
   const [activeBurger, setActiveBurger] = useState(false);
@@ -42,6 +60,12 @@ export default function Home() {
   const showBurger = () => {
     activeBurger ? setActiveBurger(false) : setActiveBurger(true);
   };
+
+  const router = useRouter()
+
+  const watsAppHandler = () => {
+    router.push("https://wa.me/+79683514994") 
+  }
 
   return (
     
@@ -83,8 +107,8 @@ export default function Home() {
                       </a>
                     </li>
                     <li id="menu-phone-container-1">
-                      <Image alt="" id="logotip_main" src={Min_phone} />
-                      <a id="menu-1" href="#four-container">
+                      <Image alt="Icon_watsup" id="logotip_main" src={Min_phone} />
+                      <a id="menu-1" href="">
                         rubrick@list.ru
                       </a>
                     </li>
@@ -95,7 +119,7 @@ export default function Home() {
                       </a>
                     </li>
                     <li>
-                      <a id="menu" href="#main-six-container">
+                      <a id="menu" href="" onClick={watsAppHandler}>
                         <Image alt="" id="logotip_wutsup" src={logo_watsupp} />
                       </a>
                     </li>
@@ -105,14 +129,24 @@ export default function Home() {
             </nav>
             <div className={styles.popup} id="popup"></div>
           </div>
-          <div className={activeBurger ? style.contentScroll : ''} onClick={showBurger}></div>
-          {activeBurger && <div className={style.burgerColntainer}>ddd</div>}
+          <div className={activeBurger ? style.contentScroll : ''} onClick={showBurger}>
+
+          </div>
+          {activeBurger && <div className={style.burgerColntainer}>
+          <div className={styles.menu} id="menu-111"><a href="#twoContainerSize">Преимущества</a></div>
+          <div className={styles.menu} id="menu-111"><a href ="#containerSizeThree" >Стоимость</a></div>
+          <div className={styles.menu} id="menu-111"> <a href="#five-container"> Наши партнеры</a></div>
+          <div className={styles.menu}   id="menu-114"><a href="#sixContainerRight">  <Image alt="Почта" id="lgotip_logotip_logotip" src={Min_ph} />rubrick@list.ru</a></div>
+          <div className={styles.menu} id="menu-115"><a href="#containerSizeFour"><Image alt="Телефон" id="lgotip_logotip_logotip" src={Min_mess}/> +7 937 512-35-50</a></div>
+
+           
+            </div>}
           <div
             className={styles.firstContainerDown_main}
             id="firstContainerDown_main">
             <div className={styles.firstContainerDown} id="firstContainerDown1">
               <a href="#" className={styles.logo} id="logo">
-                <Image alt="" id="logotip_main" src={Keram_block} />
+                <Image alt="<brend_name" id="logotip_main_main" src={Keram_block} />
               </a>
               <p id="firstContainerRightNAme-top">
                 ТЁПЛАЯ КЕРАМИКА ДЛЯ ЛЮБЫХ СТРОИТЕЛЬНЫХ ЗАДАЧ
@@ -122,8 +156,11 @@ export default function Home() {
               <button id="button_111">Рассчитать</button>
             </div>
 
-            <div className={styles.firstContainerLight}>
-              <Image alt="" id="logotip_1" src={kirpich} />
+            <div id='firstContainerLight' className={styles.firstContainerLight}>
+              <Image alt="Бренд " id="logotip_1" src={kirpich} />
+            </div>
+            <div className={styles.firstbuttcontainer} id="firstbuttcontainer">
+              <button className={styles.button_222} id="button_222"><a id="linkArror" href="#threeContainerLeft">Рассчитать </a></button>
             </div>
           </div>
         </div>
@@ -152,9 +189,7 @@ export default function Home() {
                 объекта выгодой до 20%
               </li>
             </div>
-            <div id="AskList" className={styles.threeContainerRight}>
-              <AskList></AskList>
-            </div>
+            <AskList id='Askitlist001' ></AskList>
           </div>
         </div>
         <div className={styles.Four_container} id="Four_container">
@@ -186,7 +221,7 @@ export default function Home() {
 
             <div className={styles.wats} id="watsupp_class">
               <Image id="watsupp" src={watsupp} />
-              <p>Написать в Ватсап</p>
+              <p id='watsup_text' >Написать в Ватсап</p>
             </div>
           </div>
         </div>
@@ -197,6 +232,13 @@ export default function Home() {
                 <b>
                   Наши
                   <br /> партнёры
+                  <div id="partner_class" className={styles.partner} >
+                    <Image id="one" src={one} />
+                    <Image id="one" src={two} />
+                    <Image id="one" src={three} />
+                    <Image id="one" src={four} />
+                    <Image id="one" src={five} />
+                  </div>
                 </b>
               </h2>
               <Image id="logotip_3" src={five_7} />

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import styles from "./askList.module.css";
 import { sendContactForm } from "../utils/api";
 
-import logo from "../../../photo/photo-1/logo_watsupp.png";
+import logo from "../../../photo/photo-6/WIN.png";
 import Image from "next/image";
 
 const initialValues = {
@@ -55,7 +55,7 @@ const AskList = () => {
     {
       questionText: "Контактные данные",
       answer: [
-        { id: 24, answerTextInput: "Ваше имя", other: "name" },
+        { id: 24, answerTextInput: "Ваше имя", other: "name"  },
         { id: 25, answerTextInput: "Телефон", other: "phone" },
         {
           id: 26,
@@ -139,36 +139,36 @@ const AskList = () => {
   console.log(arr);
 
   return (
-    <div>
+    <div className={styles.askWrapper}>
       <div className={styles.numbersContainer}>
         {arr.map((i) => (
           <div className={styles.lineContainer} key={300 + i}>
             {i != 1 ? <span className={styles.line} key={200 + i}></span> : ""}
 
-            <p
-              className={
+            <p id="sphere"
+              className ={
                 currentQuestion + 1 === i ? styles.active : styles.number
               }
               key={i + 100}>
               {i}
             </p>
           </div>
-        ))}
+        ))}  
       </div>
       <p className={styles.questionText}>
         {questions[currentQuestion].questionText}
       </p>
-      <div>
+      <div id="sphere">
         {questions[currentQuestion].answer.map((i) => (
           <div
             key={i.id}
-            className={i?.answerTextInput ? styles.fiveSlide : ""}>
+            className={i?.answerTextInput ? styles.fiveSlide : styles.basicAsk}>
             {i?.answerText && !i?.answerTextWithOutCheckBox ? (
               <input
                 onClick={() => {
                   changeChoseHandler(i.answerText);
                 }}
-                className={styles.checkBox}
+                className  ={styles.checkBox }
                 type="checkbox"></input>
             ) : (
               ""
@@ -185,7 +185,7 @@ const AskList = () => {
               )}
             </p>
             {i?.other && (
-              <input
+              <input id="sphere" 
                 placeholder={i.answerTextInput}
                 className={styles.input}
                 name={i.other}
@@ -194,28 +194,29 @@ const AskList = () => {
           </div>
         ))}
       </div>
-
+      <div className={styles.button001}>
       {lastQuestion && currentQuestion + 1 != questions.length ? (
         <button
           className={styles.submitButton}
           type="submit"
           onClick={onSubmit}>
-          End Next
+          Далее →
         </button>
-      ) : currentQuestion + 1 != questions.length ? (
+      ) : currentQuestion + 1 != questions.length ?  (
         <button className={styles.nextButton} onClick={nextQuestionHandler}>
-          Далее
+          Далее →
         </button>
       ) : (
         ""
       )}
       {currentQuestion + 1 != questions.length ? (
         <button className={styles.backButton} onClick={backQuestionHandler}>
-          Назад
+         ← Назад
         </button>
       ) : (
         ""
-      )}
+        )}
+        </div>
     </div>
   );
 };
