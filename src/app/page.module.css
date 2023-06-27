@@ -4,7 +4,7 @@
 	overflow: hidden;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	position: fixed;
 	z-index: 5;
 	top: 10vh;
@@ -19,10 +19,16 @@
 
 .burgerClose {
 	display: none;
+	
+}
+#button_111#linkArror{
+	color: orange;
+
 }
 
 .burgerStandart {
 	display: none;
+	
 	
 }
 /* #logotip_main_main{
@@ -51,15 +57,17 @@
 		padding-right: 5%;
 		width: 100%;
 		
+		
 	}
 	.burgerColntainer{
 		display: flex;
 		justify-content: flex-start;
-		align-items: flex-start;
+		align-self: self-start;
 		padding: 20px;
 		background-color: #efefef;
 		width: 50%;
 		border-top: medium solid grey;
+		opacity: 0.9;
 	}
 	#menu-111{
 		display: flex;

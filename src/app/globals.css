@@ -1,12 +1,18 @@
-@font-face {
-	font-family: 'Evolventa-Regular'; 
-	src: url(/font-alim/Evolventa-Regular.ttf); 
-}
+
 
 @font-face {
-	font-family: 'Evolventa-Regular-Bold'; 
-	src: url(/font-alim/Evolventa-BoldOblique.ttf); 
-}
+    font-family: "Evolventa-Regular-Bold";
+    src: url('../app/font-alim/Evolventa-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: "Evolventa-Regular";
+    src: url('../app/font-alim/Evolventa-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
 .form_otprav-first{
     padding-right: 70px;
 }
@@ -16,6 +22,10 @@ body{
 #containerFlexbox{
     overflow-x: hidden;
 }
+#h1-three-containerХ{
+    font-family: 'Evolventa-Regular-Bold';
+}
+
 
 
 
@@ -33,6 +43,7 @@ body{
     flex-wrap: nowrap;
     
 }
+#firstContainerDown1
 
     
 
@@ -80,7 +91,11 @@ body{
     white-space: nowrap;
     font-family: "Evolventa-Regular";
     color: #787878;
+    font-family:'Evolventa-Regular' ;
+    
 }
+
+
 #h1-three-container{
     padding-bottom: 0px;
 }
@@ -102,7 +117,8 @@ body{
     left: 0;
     display: flex;
     justify-content: space-between;
-    max-width: 1920px;
+    min-width: 100%;
+    
     width: 100%;
     
 }
@@ -149,9 +165,9 @@ body{
     flex-direction: column;
     max-width: 481px;
 } 
-#sixContainerRight{
+/* #sixContainerRight{
     margin-top: 10%;
-}
+} */
 
 .first-container-panel-content{
     height: 84px;
@@ -197,14 +213,16 @@ body{
     align-self: flex-end;
     display: flex;
     padding-bottom: 90px;
-    flex-direction: column;
-    font-size: 24px;
+    flex-direction: row;
+    font-size: 20px;
 }
 #watsupp{
-    margin-left: 80%;
+    /* margin-left: 80%; */
 }
 #watsup_text{
     width: 100%;
+    padding-top: 10%;
+    padding-left: 5%;
 }
 
 #logotip_main_1{
@@ -605,6 +623,9 @@ display: flex;
     justify-content: space-between;
     align-items: center;
 }
+#watsup_text{
+    padding-top: \;
+}
 #three-container{
     display: flex;
     flex-direction: row;
@@ -671,6 +692,8 @@ display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width:  100%;
+    
     text-decoration:none;
     color: black;
    
@@ -849,9 +872,13 @@ a.menu-111{
     #menu-phone-container-2{
         display: flex;
         align-items: center;
+        flex-direction: row;
     }
     #firstbuttcontainer{
         display: none;
+    }
+    a#button{
+        color: #E26007;
     }
 
 
@@ -1130,6 +1157,15 @@ a.menu-111{
 }
 
 
+@media(min-width: 2000px) {
+    #firstContainerRightNAme-top{
+        font-size: 33px;
+
+    }
+
+}
+
+
 
 @media(max-width: 1417px) {
     #logotip_2{
@@ -1170,14 +1206,17 @@ a.menu-111{
 
        
     }
+    #linkAr{
+        color: #E26007;
+    }
 
     #linkArror {
         color: #E26007;
     }
 
     #button_222{
-        width: 351px;
-        height: 52px;
+    width: 351px;
+    height: 52px;
         
       border-radius: 20px;
       background: transparent;
@@ -1193,15 +1232,21 @@ a.menu-111{
       
 
     }
-    a.button_222{
-        text-decoration: none;
+    #linkArror{
+        color: #E26007;
     }
+   
     #button_222:hover{
         background-color: #E26007;
         color: #ffffff;
-        text-decoration: none;
+        
+        
 
     }
+    a.button{
+        color: #E26007;
+    }
+    
     #button_111{
         display: none;
     }
@@ -1279,6 +1324,7 @@ a.menu-111{
     #watsupp_class{
         align-self: self-start;
         justify-content: center;
+      
     }
     #partner_class{
         display: flex;
@@ -1360,8 +1406,11 @@ a.menu-111{
         width: 390px;
         height: 130px;
     }
+    #form_otprav-two{
+        margin-right: 0;
+    }
     #watsupp_class{
-        align-self: center;
+        /* align-self: center; */
         margin-left: 0;
         margin-right: 50%;
     }
@@ -1381,6 +1430,13 @@ a.menu-111{
 #four-container-text{
     padding-left: 10%;
 }
+#logotip_1{
+    width: 350px;
+    height: 350px;
+}
+.button_111{
+    background-color: #E26007;
+}
 
 #h1-three-container{
     font-size: 45px;
@@ -1393,6 +1449,17 @@ a.menu-111{
 
 }
 @media(max-width: 430px) {
+    #watsupp_class{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-left: 3%;
+        justify-content: center;
+        align-self: center;
+        margin: none;
+
+        
+    }
     #logotip_main_main{
         width: 360px;
         height: 115px;
@@ -1404,6 +1471,9 @@ a.menu-111{
         align-self: center;
         
         
+    }
+    #h1-three-container-text{
+        font-size: 20px;
     }
 
 

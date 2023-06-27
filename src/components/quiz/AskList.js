@@ -19,59 +19,76 @@ const initialState = { values: initialValues };
 const AskList = () => {
   let questions = [
     {
-      questionText: "Выберите производителя",
+      questionText:
+        "Какой производитель Вам необходим? (Можно выбрать несколько вариантов)",
       answer: [
         { id: 1, answerText: "Винербергер (Поротерм)" },
-        { id: 2, answerText: "Термоблок (Сталинград)" },
-        { id: 3, answerText: "Гжель" },
+        { id: 2, answerText: "Гжель" },
+        { id: 3, answerText: "Термоблок (Сталинград)" },
         { id: 4, answerText: "Керакам" },
-        { id: 5, answerText: "Радошковичи" },
-        { id: 6, answerText: "ЛСР" },
+        { id: 5, answerText: "ЛСР" },
+        { id: 6, answerText: "Радошковичи" },
+        { id: 7, answerText: "Нужна консультация" },
       ],
     },
     {
-      questionText: "Тип и размер кирпича",
+      questionText: "Размер блока (Можно выбрать несколько вариантов)",
       answer: [
-        { id: 7, answerText: "Блок крупноформатный 12,3 НФ 440мм" },
-        { id: 8, answerText: "Блок крупноформатный 10,7 НФ 380 мм" },
-        { id: 9, answerText: "Блок крупноформатный 14,3 НФ 510мм" },
-        { id: 10, answerText: "Блок крупноформатный 10,7 НФ 250 мм" },
-        { id: 11, answerText: "Камень поризованный 2,1НФ" },
-        { id: 12, answerText: "Керамический камень 6,8НФ" },
-        { id: 13, answerText: "Нужна консультация" },
+        { id: 8, answerText: "Камень поризованный - 2,1НФ (250х120х140" },
+        { id: 9, answerText: "Блок крупноформатный 12 - 6,8НФ (510х120x219)" },
+        {
+          id: 10,
+          answerText: "Блок крупноформатный 25 - 10,7НФ (250x380x219)",
+        },
+        {
+          id: 11,
+          answerText: "Блок крупноформатный 38 - 10,7НФ (380x250x219)",
+        },
+        {
+          id: 12,
+          answerText: "Блок крупноформатный 44 - 12,3НФ (250x440x219)",
+        },
+        {
+          id: 13,
+          answerText: "Блок крупноформатный 51 - 14,3НФ (250х510х219)",
+        },
       ],
     },
     {
-      questionText: "Количество",
+      questionText:
+        "3 Вопрос - Количество (Можно указать общее количество всех размеров)",
       answer: [
         { id: 14, answerText: "до 1000 шт" },
-        { id: 15, answerText: "до 5000 шт" },
-        { id: 16, answerText: "до 10000 шт" },
-        { id: 17, answerText: "до 20000 шт" },
-        { id: 18, answerText: "более 20000 шт" },
-        { id: 19, answerText: "Нужна консультация" },
+        { id: 15, answerText: "от 1000шт до 3000шт" },
+        { id: 16, answerText: "от 3000шт до 5000шт" },
+        { id: 17, answerText: "от 5000шт до 10000шт" },
+        { id: 18, answerText: "от 10000шт до 20000шт" },
       ],
     },
     {
-      questionText: "Контактные данные",
+      questionText:
+        "4 Вопрос - Укажите адрес доставки для расчета стоимости доставки (Можно указать ближайший крупный населенный пункт)",
       answer: [
-        { id: 24, answerTextInput: "Ваше имя", other: "name"  },
-        { id: 25, answerTextInput: "Телефон", other: "phone" },
         {
-          id: 26,
+          id: 19,
           answerTextInput: "Адрес доставки или город",
           other: "country",
         },
       ],
     },
     {
-      questionText: "Благодарим за заявку",
+      questionText: "Укажите где Вам удобнее получить ответ",
       answer: [
-        {
-          id: 28,
-          picture: logo,
-          answerTextWithOutCheckBox: "Мы свяжемся с вами в ближайшее время",
-        },
+        { id: 20, answerText: "WhatsApp" },
+        { id: 21, answerText: "Telegram" },
+        { id: 22, answerText: "Телефонный разговор (Нужна консультация)" },
+      ],
+    },
+    {
+      questionText: "Укажите Ваши контакты и получите расчет",
+      answer: [
+        { id: 23, answerTextInput: "Ваше имя", other: "name" },
+        { id: 24, answerTextInput: "Телефон", other: "phone" },
       ],
     },
   ];
@@ -81,7 +98,8 @@ const AskList = () => {
   const [answer, setAnswer] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [lastQuestion, setLastQuestion] = useState(false);
-  const [arr, setArr] = useState([1, 2, 3, 4, 5]);
+  const [arr, setArr] = useState([1, 2, 3, 4, 5, 6]);
+  const [errorInput, setErrorInput] = useState(false)
 
   const changeChoseHandler = (text) => {
     if (answer.includes(text)) {
@@ -95,14 +113,14 @@ const AskList = () => {
 
   const nextQuestionHandler = (e) => {
     // e.preventDefault();
-    console.log(currentQuestion, questions.length);
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     }
 
-    if (currentQuestion + 3 === questions.length) {
+    if (currentQuestion + 2 === questions.length) {
       setLastQuestion(true);
     }
+    console.log(currentQuestion, questions.length, lastQuestion);
   };
 
   const backQuestionHandler = (e) => {
@@ -115,6 +133,7 @@ const AskList = () => {
 
   const inputChangeHandler = ({ target }) => {
     //console.log(target.name, target.value);
+
     setState((prev) => ({
       ...prev,
       values: {
@@ -145,15 +164,16 @@ const AskList = () => {
           <div className={styles.lineContainer} key={300 + i}>
             {i != 1 ? <span className={styles.line} key={200 + i}></span> : ""}
 
-            <p id="sphere"
-              className ={
+            <p
+              id="sphere"
+              className={
                 currentQuestion + 1 === i ? styles.active : styles.number
               }
               key={i + 100}>
               {i}
             </p>
           </div>
-        ))}  
+        ))}
       </div>
       <p className={styles.questionText}>
         {questions[currentQuestion].questionText}
@@ -168,7 +188,7 @@ const AskList = () => {
                 onClick={() => {
                   changeChoseHandler(i.answerText);
                 }}
-                className  ={styles.checkBox }
+                className={styles.checkBox}
                 type="checkbox"></input>
             ) : (
               ""
@@ -185,7 +205,8 @@ const AskList = () => {
               )}
             </p>
             {i?.other && (
-              <input id="sphere" 
+              <input
+                id="sphere"
                 placeholder={i.answerTextInput}
                 className={styles.input}
                 name={i.other}
@@ -195,28 +216,28 @@ const AskList = () => {
         ))}
       </div>
       <div className={styles.button001}>
-      {lastQuestion && currentQuestion + 1 != questions.length ? (
-        <button
-          className={styles.submitButton}
-          type="submit"
-          onClick={onSubmit}>
-          Далее →
-        </button>
-      ) : currentQuestion + 1 != questions.length ?  (
-        <button className={styles.nextButton} onClick={nextQuestionHandler}>
-          Далее →
-        </button>
-      ) : (
-        ""
-      )}
-      {currentQuestion + 1 != questions.length ? (
-        <button className={styles.backButton} onClick={backQuestionHandler}>
-         ← Назад
-        </button>
-      ) : (
-        ""
+        {lastQuestion && currentQuestion != questions.length ? (
+          <button
+            className={styles.submitButton}
+            type="submit"
+            onClick={onSubmit}>
+            Отправить →
+          </button>
+        ) : currentQuestion + 1 != questions.length ? (
+          <button className={styles.nextButton} onClick={nextQuestionHandler}>
+            Далее →
+          </button>
+        ) : (
+          ""
         )}
-        </div>
+        {currentQuestion + 1 != questions.length ? (
+          <button className={styles.backButton} onClick={backQuestionHandler}>
+            ← Назад
+          </button>
+        ) : (
+          ""
+        )}
+      </div>
     </div>
   );
 };

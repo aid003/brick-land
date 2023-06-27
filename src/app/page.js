@@ -1,5 +1,5 @@
 "use client";
-//import './reset.css'
+// import './reset.css'
 import styless from "./reset.css"
 import styles from "./globals.css";
 import style from "./page.module.css";
@@ -19,10 +19,10 @@ import Min_message from "../../photo/photo-1/min-message.png";
 import logo_watsupp from "../../photo/photo-1/logo_watsupp.png";
 import kirpich from "../../photo/photo-1/Кирпичи.png";
 //2 блок
-import block_11 from "../../photo/photo-2/1блок.png";
-import block_22 from "../../photo/photo-2/2 блок.png";
-import block_33 from "../../photo/photo-2/3блок.png";
-import block_44 from "../../photo/photo-2/4 блок.png";
+import block_11 from "../../photo/photo-2/1 Кружок.png";
+import block_22 from "../../photo/photo-2/2 Кружок.png";
+import block_33 from "../../photo/photo-2/3 Кружок.png";
+import block_44 from "../../photo/photo-2/4 Кружок.png";
 ///4 блок
 import Telephone from "../../photo/photo-4/Telephone.png";
 import watsupp from "../../photo/photo-4/watsupp.png";
@@ -74,7 +74,7 @@ export default function Home() {
           <div
             className={styles.firstContainerPanelContent}
             id="firstContainerPanelContent">
-            <Image width={200} alt="" id="logotip_main_1" src={logo} />
+            <Image width={200} alt="Logotip" id="logotip_main_1" src={logo} />
 
             <div onClick={showBurger} className={style.burgerStandart}>
               {activeBurger ? <RxCross1></RxCross1> :<RxHamburgerMenu></RxHamburgerMenu>}
@@ -134,7 +134,7 @@ export default function Home() {
           </div>
           {activeBurger && <div className={style.burgerColntainer}>
           <div className={styles.menu} id="menu-111"><a href="#twoContainerSize">Преимущества</a></div>
-          <div className={styles.menu} id="menu-111"><a href ="#containerSizeThree" >Стоимость</a></div>
+          <div className={styles.menu} id="menu-111"><a href ="#containerSizeThree" >Расчет стоимость</a></div>
           <div className={styles.menu} id="menu-111"> <a href="#five-container"> Наши партнеры</a></div>
           <div className={styles.menu}   id="menu-114"><a href="#sixContainerRight">  <Image alt="Почта" id="lgotip_logotip_logotip" src={Min_ph} />rubrick@list.ru</a></div>
           <div className={styles.menu} id="menu-115"><a href="#containerSizeFour"><Image alt="Телефон" id="lgotip_logotip_logotip" src={Min_mess}/> +7 937 512-35-50</a></div>
@@ -153,14 +153,14 @@ export default function Home() {
                 <br />
                 ВЫБОР ИЗ ШЕСТИ ПОПУЛЯРНЫХ БРЕНДОВ В НАЛИЧИИ
               </p>
-              <button id="button_111">Рассчитать</button>
+              <a id="linkAr"href="#threeContainerLeft"><button className={styles.button_111}id="button_111">Рассчитать</button></a>
             </div>
 
             <div id='firstContainerLight' className={styles.firstContainerLight}>
-              <Image alt="Бренд " id="logotip_1" src={kirpich} />
+              <Image alt="Brend" id="logotip_1" src={kirpich} />
             </div>
             <div className={styles.firstbuttcontainer} id="firstbuttcontainer">
-              <button className={styles.button_222} id="button_222"><a id="linkArror" href="#threeContainerLeft">Рассчитать </a></button>
+              <a id="linkArror" href="#threeContainerLeft"><button className={styles.button_222} id="button_222">Рассчитать </button></a>
             </div>
           </div>
         </div>
@@ -168,10 +168,10 @@ export default function Home() {
         <div id="two-container">
           <div id="containerSize" className={styles.containerSize}>
             <div id="twoContainerSize" className={styles.twoContainerSize}>
-              <Image id="logotip_2" src={block_11} />
-              <Image id="logotip_2" src={block_22} />
-              <Image id="logotip_2" src={block_33} />
-              <Image id="logotip_2" src={block_44} />
+              <Image id="logotip_2" alt="Блок-1" src={block_11} />
+              <Image id="logotip_2" alt="Блок-2"  src={block_22} />
+              <Image id="logotip_2" alt="Блок-3" src={block_33} />
+              <Image id="logotip_2" alt="Блок-4" src={block_44} />
             </div>
           </div>
         </div>
@@ -216,11 +216,11 @@ export default function Home() {
               <Contact></Contact>
             </div>
             <div className={styles.fourContainerTwo} id="Telephone">
-              <Image id="Telephone" src={Telephone} />
+              <Image id="Telephone" alt="Блок с ТЕЛЕФОн для связи" src={Telephone} />
             </div>
 
-            <div className={styles.wats} id="watsupp_class">
-              <Image id="watsupp" src={watsupp} />
+            <div className={styles.wats} id="watsupp_class"> <a  href="https://api.whatsapp.com/send/?phone=%2B79683514994&text&type=phone_number&app_absent=0"></a>
+              <Image id="watsupp" alt="Картинка Для свзя по Телефону" src={watsupp} />
               <p id='watsup_text' >Написать в Ватсап</p>
             </div>
           </div>
@@ -233,15 +233,15 @@ export default function Home() {
                   Наши
                   <br /> партнёры
                   <div id="partner_class" className={styles.partner} >
-                    <Image id="one" src={one} />
-                    <Image id="one" src={two} />
-                    <Image id="one" src={three} />
-                    <Image id="one" src={four} />
-                    <Image id="one" src={five} />
+                    <Image id="one" alt="Наш партнер" src={one} />
+                    <Image id="one" alt="Наш партнер" src={two} />
+                    <Image id="one" alt="Наш партнер"src={three} />
+                    <Image id="one" alt="Наш партнер" src={four} />
+                    <Image id="one" alt="Наш партнер" src={five} />
                   </div>
                 </b>
               </h2>
-              <Image id="logotip_3" src={five_7} />
+              <Image id="logotip_3" alt="Наш партнер" src={five_7} />
             </div>
           </div>
         </div>
@@ -251,7 +251,7 @@ export default function Home() {
               <p id="rubr">ООО “РуБрик”</p>
               <p>г. Москва, ул. Николоямская</p>
               <br /> <p>д. 43, к. 4, пом. 3/9</p>
-              <Image id="log" src={six_2} />
+              <Image id="log" alt="Иконка бренда" src={six_2} />
             </div>
 
             <div id="sixContainerRight" className={styles.sixContainerRight}>
@@ -260,14 +260,12 @@ export default function Home() {
                 <br /> КПП: 770901001
                 <br /> ОГРН: 1237700105323
               </p>
-              <Image id="log" src={six_1} />
+              <Image id="log" alt="Иконка бренда" src={six_1} />
               <p>order@block.ru</p>
               <p>+7 495 534-32-90</p>
             </div>
           </div>
         </div>
-        {/* <AskList></AskList>
-      <Contact></Contact> */}
       </div>
     
   );

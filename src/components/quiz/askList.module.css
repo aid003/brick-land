@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "Evolventa-Regular";
+    src: url('../Evolventa-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 #AskList{
 	background-color: #FFFFFF;
 	display: flex;
@@ -6,6 +13,8 @@
 	justify-content: flex-start;
 	align-items: center;
 	flex-direction: row;
+	
+	
 	
 }
 .questionText {
@@ -19,6 +28,7 @@
 	margin-bottom: 5vh;
 	margin-top: 5vh;
 	font-family: "Evolventa-Regular-Bold";
+	
 }
 
 .askItem {
@@ -27,6 +37,7 @@
 	display: flex;
 	justify-content:space-between;
 	align-items: center;
+	
 	flex-direction: row;
 	
 }
@@ -40,10 +51,14 @@
 	align-items: center;
 	justify-content: space-between;
 	
+	
 }
 
 .number {
-	font-size: large;
+	font-size: 30px;
+	align-items: center;
+	justify-content: center;
+	
 }
 
 .lineContainer {
@@ -52,6 +67,7 @@
 	justify-content: center;
 	margin-top: 4vh;
 	color:#63A015;
+	
 	
 	
 }
@@ -115,6 +131,7 @@ justify-content: flex-start;
 	background-color: #FFFFFF;
 	padding-left: 5%;
 	padding-right: 3%;
+	font-family: "Evolventa-Regular";
 	
 }
 .button001{
@@ -173,6 +190,8 @@ justify-content: flex-start;
 .checkBox{
 	background-color: #63A015;
 	color: #63A015;
+	width: 32px;
+    height: 32px;
 }
 @media(max-width: 630px) {
 	.askWrapper{
