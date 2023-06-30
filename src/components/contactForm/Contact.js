@@ -50,7 +50,7 @@ const Contact = () => {
           <input id="form_otprav-two"
             type="text"
             name="message"
-            placeholder="+123456789"
+            placeholder="+7 123-45-67-89"
             value={values.name}
             onChange={handleChange}
           />

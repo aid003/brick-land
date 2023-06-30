@@ -55,8 +55,7 @@ const AskList = () => {
       ],
     },
     {
-      questionText:
-        "3 Вопрос - Количество (Можно указать общее количество всех размеров)",
+      questionText: "Количество (Можно указать общее количество всех размеров)",
       answer: [
         { id: 14, answerText: "до 1000 шт" },
         { id: 15, answerText: "от 1000шт до 3000шт" },
@@ -67,7 +66,7 @@ const AskList = () => {
     },
     {
       questionText:
-        "4 Вопрос - Укажите адрес доставки для расчета стоимости доставки (Можно указать ближайший крупный населенный пункт)",
+        "Укажите адрес доставки для расчета стоимости доставки (Можно указать ближайший крупный населенный пункт)",
       answer: [
         {
           id: 19,
@@ -91,6 +90,16 @@ const AskList = () => {
         { id: 24, answerTextInput: "Телефон", other: "phone" },
       ],
     },
+    {
+      questionText: "Благодарим за заявку",
+      answer: [
+        {
+          id: 28,
+          picture: logo,
+          answerTextWithOutCheckBox: "Мы свяжемся с вами в ближайшее время",
+        },
+      ]
+    }
   ];
 
   const [state, setState] = useState(initialState);
@@ -98,8 +107,11 @@ const AskList = () => {
   const [answer, setAnswer] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [lastQuestion, setLastQuestion] = useState(false);
-  const [arr, setArr] = useState([1, 2, 3, 4, 5, 6]);
-  const [errorInput, setErrorInput] = useState(false)
+  const [arr, setArr] = useState([1, 2, 3, 4, 5, 6, 7]);
+
+  const [invalidCountry, setInvalidCountry] = useState(false);
+  const [invalidName, setInvalidName] = useState(false);
+  const [invalidPhone, setInvalidPhone] = useState(false);
 
   const changeChoseHandler = (text) => {
     if (answer.includes(text)) {
@@ -113,14 +125,14 @@ const AskList = () => {
 
   const nextQuestionHandler = (e) => {
     // e.preventDefault();
+    console.log(currentQuestion, questions.length, invalidCountry);
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     }
 
-    if (currentQuestion + 2 === questions.length) {
+    if (currentQuestion + 3 === questions.length) {
       setLastQuestion(true);
     }
-    console.log(currentQuestion, questions.length, lastQuestion);
   };
 
   const backQuestionHandler = (e) => {
@@ -133,7 +145,6 @@ const AskList = () => {
 
   const inputChangeHandler = ({ target }) => {
     //console.log(target.name, target.value);
-
     setState((prev) => ({
       ...prev,
       values: {
@@ -143,6 +154,16 @@ const AskList = () => {
       },
     }));
   };
+
+  useEffect(() => {
+    state.values.country.length > 0
+      ? setInvalidCountry(false)
+      : setInvalidCountry(true);
+
+    state.values.name.length > 0 ? setInvalidName(false) : setInvalidName(true);
+
+    state.values.phone.length > 0 ? setInvalidPhone(false) : setInvalidPhone(true)
+  }, [state]);
 
   const onSubmit = async (e) => {
     // e.preventDefault()
@@ -207,8 +228,9 @@ const AskList = () => {
             {i?.other && (
               <input
                 id="sphere"
+
                 placeholder={i.answerTextInput}
-                className={styles.input}
+                className={invalidCountry ? styles.inputError : styles.input}
                 name={i.other}
                 onChange={inputChangeHandler}></input>
             )}
@@ -216,15 +238,23 @@ const AskList = () => {
         ))}
       </div>
       <div className={styles.button001}>
-        {lastQuestion && currentQuestion != questions.length ? (
+        {lastQuestion && currentQuestion + 1 != questions.length ? (
           <button
             className={styles.submitButton}
             type="submit"
-            onClick={onSubmit}>
-            Отправить →
+            onClick={(e) => {invalidPhone && invalidName ? ()=>{} : onSubmit(e)}}>
+            Далее →
           </button>
-        ) : currentQuestion + 1 != questions.length ? (
-          <button className={styles.nextButton} onClick={nextQuestionHandler}>
+        ) : currentQuestion + 2 != questions.length ? (
+          <button
+            className={styles.nextButton}
+            onClick={(e) => {
+              !invalidCountry
+                ? nextQuestionHandler(e)
+                : currentQuestion != 3
+                ? nextQuestionHandler(e)
+                : () => {};
+            }}>
             Далее →
           </button>
         ) : (

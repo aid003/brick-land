@@ -15,6 +15,10 @@
 	text-decoration: none;
 	color: #efefef;
 } */
+#colortext{
+	color: green;
+	display: flex;
+}
 
 
 .burgerClose {
@@ -56,8 +60,10 @@
 		align-self: center;
 		padding-right: 5%;
 		width: 100%;
-		
-		
+	}
+	.svg{
+		width: 20px;
+		height: 20px;
 	}
 	.burgerColntainer{
 		display: flex;

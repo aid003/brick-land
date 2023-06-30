@@ -55,7 +55,7 @@
 }
 
 .number {
-	font-size: 30px;
+	font-size: 25px;
 	align-items: center;
 	justify-content: center;
 	
@@ -96,8 +96,19 @@
 	height: 50px;
 	margin: 10px 0 10px 0;
 	
-	
+}
 
+.inputError {
+	background-color: white; 
+	border-radius: 10px;
+	width: 500px;
+	height: 50px;
+	margin: 10px 0 10px 0;
+	border-color: red;
+}
+
+.inputError::placeholder{
+color: rgb(255, 0, 0);
 }
 
 .basicAsk {
@@ -126,7 +137,8 @@ justify-content: flex-start;
 
 .askWrapper {
 	margin-right: 2%;
-	width: 50%;
+	width: 5
+	0%;
 	height: 30%;
 	background-color: #FFFFFF;
 	padding-left: 5%;
@@ -199,4 +211,11 @@ justify-content: flex-start;
 	}
 
 
+}
+
+
+@media(max-width: 430px) {
+	.input{
+		width: 65%;
+	}
 }

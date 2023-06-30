@@ -87,13 +87,24 @@ body{
 
 #h1-three-container-text{
     display: flex;
-    flex-wrap: nowrap;
+    
     white-space: nowrap;
     font-family: "Evolventa-Regular";
     color: #787878;
     font-family:'Evolventa-Regular' ;
     
 }
+#colortext{
+	color: green;
+	display: flex;
+    flex-wrap: wrap;
+    font-weight: 600;
+}
+.activeBurger{
+    width: 20px;
+    height: 20px;
+}
+
 
 
 #h1-three-container{
@@ -106,7 +117,6 @@ body{
     width: 50%;
     
 
-    
 }
 #firstContainerRightNAme-top{
     font-family: "Evolventa-Regular";
@@ -149,6 +159,9 @@ body{
 #firstContainerPanelContent{
     border-bottom: 3px solid grey;
 }
+
+
+
 
 .container-size{
     
@@ -199,12 +212,23 @@ body{
     width: 340px
 
 }
-#Telephone{
+#Telephone_big{
     /* width: 152px; */
-    transform: rotate(-6px);
-    padding-bottom: 40px;
+    transform:  rotate(180deg) ;
+    /* padding-bottom: 40px; */
     align-self: flex-end;
+    display: flex;
+    margin-top: 50%;
 
+}
+#showBurger{
+    font-size: 30px;
+    
+}
+
+#Telephone{
+    display: flex;
+    align-self: self-end;
 }
 #logotip_4{
     padding: 0 0 100px 0;
@@ -212,9 +236,10 @@ body{
 #watsupp_class{
     align-self: flex-end;
     display: flex;
-    padding-bottom: 90px;
+    padding-bottom: 20px;
     flex-direction: row;
     font-size: 20px;
+    flex-wrap: nowrap;
 }
 #watsupp{
     /* margin-left: 80%; */
@@ -223,6 +248,12 @@ body{
     width: 100%;
     padding-top: 10%;
     padding-left: 5%;
+}
+#WWWWW{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    white-space: nowrap;
 }
 
 #logotip_main_1{
@@ -377,6 +408,9 @@ body{
 .three-container-right{
     width: 100;
     height: auto;
+}
+#Telephone {
+    transform: rotate(180px);
 }
 #p-2{
     font-size: 24px;
@@ -880,6 +914,13 @@ a.menu-111{
     a#button{
         color: #E26007;
     }
+    #black{
+        flex-wrap: nowrap;
+        display: flex;
+        color: green;
+        justify-content: flex-start;
+        width: 100%;
+    }
 
 
 
@@ -1355,9 +1396,8 @@ a.menu-111{
         width: 484px;
         height:50px ;
         padding-left: 1%;
-        
-
 }
+
 #watsupp_class{
     margin-left: 20%;
     display: flex;
@@ -1406,13 +1446,17 @@ a.menu-111{
         width: 390px;
         height: 130px;
     }
+    #containerSizeFour{
+        display: flex;
+        justify-content: center;
+    }
     #form_otprav-two{
         margin-right: 0;
     }
     #watsupp_class{
         /* align-self: center; */
-        margin-left: 0;
-        margin-right: 50%;
+        margin-left: 30%;
+        /* margin-right: 50%; */
     }
 #h1-three-container{
     padding-left: 2%;
@@ -1448,18 +1492,29 @@ a.menu-111{
 
 
 }
-@media(max-width: 430px) {
+@media(max-width: 435px) {
+    #sixContainerLeft{
+        font-size: 14px;
+    }
+    #sixContainerRight{
+        font-size: 14px;
+    }
     #watsupp_class{
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        margin-left: 3%;
+        margin-left: 2%;
         justify-content: center;
         align-self: center;
         margin: none;
-
-        
     }
+    #watsupp_class{
+        
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    
     #logotip_main_main{
         width: 360px;
         height: 115px;
@@ -1473,7 +1528,21 @@ a.menu-111{
         
     }
     #h1-three-container-text{
-        font-size: 20px;
+        font-size: 16px;
+    }
+    #watsup_text{
+        display: flex;
+        flex-direction: row;
+        white-space: nowrap;
+        
+    }
+    #logotip_main_main{
+        width: 340px;
+        height: 100px;
+    }
+    #logotip_1{
+        width: 330px;
+        height: 330px;
     }
 
 
