@@ -26,7 +26,7 @@ import block_33 from "../../photo/photo-2/Vremy Postavki.png";
 import block_44 from "../../photo/photo-2/4 Кружок.png";
 ///4 блок
 import Telephone from "../../photo/photo-4/Telephone.png";
-import Telephone_big from "../../photo/photo-4/Telefon-big.png";
+import Telephone_big from "../../photo/photo-4/Telephone.png";
 
 import watsupp from "../../photo/photo-4/watsupp.png";
 //5 блок
@@ -104,17 +104,17 @@ export default function Home() {
                 <ul className={styles.menu} id="menu">
                   <li>
                     <a id="menu" href="#two-container">
-                      Преимущества
+                      ПРЕИМУЩЕСТВА
                     </a>
                   </li>
                   <li>
                     <a id="menu" href="#three-container">
-                      Стоимость
+                      СТОИМОСТЬ
                     </a>
                   </li>
                   <li>
                     <a id="menu-22" href="#five-container">
-                      Наши партнеры
+                      НАШИ ПАРТНЕРЫ
                     </a>
                   </li>
                   <li id="menu-phone-container-1">
@@ -129,13 +129,13 @@ export default function Home() {
                   </li>
                   <li id="menu-phone-container-2">
                     <Image alt="" id="logotip_main" src={Min_ph} />
-                    <a id="menu-1" href="">
+                    <a id="menu-101" href="">
                       +7 937 512-35-50
                     </a>
                   </li>
                   <li>
                     <a id="menu" href="" onClick={watsAppHandler}>
-                      <Image alt="" id="logotip_wutsup" src={logo_watsupp} />
+                      <Image alt="LOGO" id="logotip_wutsup" src={logo_watsupp} />
                     </a>
                   </li>
                 </ul>

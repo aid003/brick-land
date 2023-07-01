@@ -62,8 +62,8 @@ body{
 #menu-1{
     color: #444444;
     font-size: 18px;
-    font-family: "Evolventa-Regular-Bold";
-    font-weight: 600;
+    font-family: "Evolventa-Regular";
+    
 }
 #five-container{
     padding: 50px;
@@ -213,10 +213,8 @@ body{
 
 }
 #Telephone_big{
-    /* width: 152px; */
-    transform:  rotate(180deg) ;
-    /* padding-bottom: 40px; */
-    align-self: flex-end;
+    
+    align-self: center;
     display: flex;
     margin-top: 50%;
 
@@ -228,18 +226,19 @@ body{
 
 #Telephone{
     display: flex;
-    align-self: self-end;
+    align-self: center;
 }
 #logotip_4{
     padding: 0 0 100px 0;
 }
 #watsupp_class{
-    align-self: flex-end;
+    align-self: center;
     display: flex;
     padding-bottom: 20px;
     flex-direction: row;
     font-size: 20px;
     flex-wrap: nowrap;
+    margin-top: 17%;
 }
 #watsupp{
     /* margin-left: 80%; */
@@ -248,12 +247,14 @@ body{
     width: 100%;
     padding-top: 10%;
     padding-left: 5%;
+    
 }
 #WWWWW{
     display: flex;
     flex-direction: row;
     width: 100%;
     white-space: nowrap;
+    margin-top: 5%;
 }
 
 #logotip_main_1{
@@ -399,7 +400,6 @@ body{
 }
 #containerSizeThree{
     display: flex;
-    ;
     flex-direction: row;
 }
 #p-1{
@@ -411,6 +411,7 @@ body{
 }
 #Telephone {
     transform: rotate(180px);
+    margin-top: 10%;
 }
 #p-2{
     font-size: 24px;
@@ -709,7 +710,7 @@ display: flex;
 #menu-1{
     text-decoration:none;
     padding: 0  10px 0  0;
-    color: black;
+    
     
 }
 
@@ -745,9 +746,7 @@ display: flex;
     align-items: center;
     
 }
-#menu-1{
-    color: black;
-}
+
 #munu-phone-container-2{
     display: flex;
     justify-content: center;
@@ -756,6 +755,10 @@ display: flex;
 }
 #menu-1{
     padding: 0 20px 0 5px;
+}
+#menu-101{
+
+    font-family: "Evolventa-Regular-Bold";
 }
 
 #munu-phone-container-1{
@@ -841,7 +844,7 @@ display: flex;
     max-width: 1420px;
     justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     width: 100%;
     padding-top: 81px;
     padding-bottom: 81px;
@@ -897,7 +900,7 @@ a.menu-111{
     }
     #containerSizeThree{
         display: flex;
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
     }
     #menu-phone-container-1{
         display: flex;
@@ -1345,6 +1348,7 @@ a.menu-111{
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
     }
     #threeContainerLeft{
         margin: 0px;
@@ -1363,7 +1367,7 @@ a.menu-111{
         align-self:center;
     }
     #watsupp_class{
-        align-self: self-start;
+        align-self: center;
         justify-content: center;
       
     }
@@ -1483,7 +1487,7 @@ a.menu-111{
 }
 
 #h1-three-container{
-    font-size: 45px;
+    font-size: 38px;
     padding-left: 10%;
 }
 #four-container-text{
@@ -1528,7 +1532,7 @@ a.menu-111{
         
     }
     #h1-three-container-text{
-        font-size: 16px;
+        font-size: 17px;
     }
     #watsup_text{
         display: flex;

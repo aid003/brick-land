@@ -34,7 +34,7 @@ const AskList = () => {
     {
       questionText: "Размер блока (Можно выбрать несколько вариантов)",
       answer: [
-        { id: 8, answerText: "Камень поризованный - 2,1НФ (250х120х140" },
+        { id: 8, answerText: "Камень поризованный - 2,1НФ (250х120х140)" },
         { id: 9, answerText: "Блок крупноформатный 12 - 6,8НФ (510х120x219)" },
         {
           id: 10,
@@ -119,13 +119,11 @@ const AskList = () => {
     } else {
       answer.push(text);
     }
-
-    console.log(answer);
   };
 
   const nextQuestionHandler = (e) => {
     // e.preventDefault();
-    console.log(currentQuestion, questions.length, invalidCountry);
+    console.log(currentQuestion, questions.length, lastQuestion);
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     }
@@ -176,17 +174,14 @@ const AskList = () => {
     await sendContactForm(values);
   };
 
-  console.log(arr);
-
   return (
     <div className={styles.askWrapper}>
       <div className={styles.numbersContainer}>
         {arr.map((i) => (
           <div className={styles.lineContainer} key={300 + i}>
             {i != 1 ? <span className={styles.line} key={200 + i}></span> : ""}
-
             <p
-              id="sphere"
+              
               className={
                 currentQuestion + 1 === i ? styles.active : styles.number
               }
@@ -199,7 +194,7 @@ const AskList = () => {
       <p className={styles.questionText}>
         {questions[currentQuestion].questionText}
       </p>
-      <div id="sphere">
+      <div >
         {questions[currentQuestion].answer.map((i) => (
           <div
             key={i.id}
@@ -222,12 +217,12 @@ const AskList = () => {
               }}>
               {i?.answerText || i?.answerTextWithOutCheckBox}
               {i?.picture && (
-                <Image key={"picture"} alt="" width={100} src={logo} />
+               <p className={styles.Akitem_img}> <Image key={"picture"} alt="БЛАГОДАРНОСТЬ" width={100}  src={logo} /></p>
               )}
             </p>
             {i?.other && (
               <input
-                id="sphere"
+                
 
                 placeholder={i.answerTextInput}
                 className={invalidCountry ? styles.inputError : styles.input}
@@ -245,7 +240,7 @@ const AskList = () => {
             onClick={(e) => {invalidPhone && invalidName ? ()=>{} : onSubmit(e)}}>
             Далее →
           </button>
-        ) : currentQuestion + 2 != questions.length ? (
+        ) : currentQuestion + 1 != questions.length ? (
           <button
             className={styles.nextButton}
             onClick={(e) => {
