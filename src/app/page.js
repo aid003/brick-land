@@ -11,7 +11,7 @@ import Image from "next/image";
 import AskList from "@/components/quiz/AskList";
 import Contact from "@/components/contactForm/Contact";
 ///1 блок
-import logo from "../../photo/photo-1/Логотип2.png";
+import logo from "../../photo/photo-1/LOGOTIP.png";
 import Keram_block from "../../photo/photo-1/Керамические блоки.png";
 import Min_phone from "../../photo/photo-1/min-phone.png";
 import Min_ph from "../../photo/photo-1/min-phone.png";
@@ -20,10 +20,10 @@ import Min_message from "../../photo/photo-1/min-message.png";
 import logo_watsupp from "../../photo/photo-1/logo_watsupp.png";
 import kirpich from "../../photo/photo-1/Кирпичи.png";
 //2 блок
-import block_11 from "../../photo/photo-2/1 Кружок.png";
-import block_22 from "../../photo/photo-2/2 Кружок.png";
-import block_33 from "../../photo/photo-2/Vremy Postavki.png";
-import block_44 from "../../photo/photo-2/4 Кружок.png";
+import block_11 from "../../photo/photo-2/benefitsVigoda-1.png";
+import block_22 from "../../photo/photo-2/Frame 3Vigoda-2.png";
+import block_33 from "../../photo/photo-2/Group 63Vigoda-3.png";
+import block_44 from "../../photo/photo-2/Frame 5Vigoda-4.png";
 ///4 блок
 import Telephone from "../../photo/photo-4/Telephone.png";
 import Telephone_big from "../../photo/photo-4/Telephone.png";
@@ -192,7 +192,7 @@ export default function Home() {
             </p>
             <a id="linkAr" href="#threeContainerLeft">
               <button className={styles.button_111} id="button_111">
-                Рассчитать
+                РАССЧИТАТЬ
               </button>
             </a>
           </div>
@@ -203,7 +203,7 @@ export default function Home() {
           <div className={styles.firstbuttcontainer} id="firstbuttcontainer">
             <a id="linkArror" href="#threeContainerLeft">
               <button className={styles.button_222} id="button_222">
-                Рассчитать{" "}
+              РАССЧИТАТЬ{" "}
               </button>
             </a>
           </div>
@@ -287,7 +287,7 @@ export default function Home() {
         <div id="containerSize" className={styles.containerSize}>
           <div id="fiveContainerDiv" className={styles.fiveContainerDiv}>
             <h2 id="text-five">
-              <b>
+              <b id="paser">
                 Наши
                 <br /> партнёры
                 <div id="partner_class" className={styles.partner}>

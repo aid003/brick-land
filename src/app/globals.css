@@ -157,7 +157,7 @@ body{
     color: #E26007;
 }
 #firstContainerPanelContent{
-    border-bottom: 3px solid grey;
+    border-bottom: 2px solid grey;
 }
 
 
@@ -177,6 +177,8 @@ body{
     align-items: center;
     flex-direction: column;
     max-width: 481px;
+    padding-left: 0.5%;
+    
 } 
 /* #sixContainerRight{
     margin-top: 10%;
@@ -238,15 +240,19 @@ body{
     flex-direction: row;
     font-size: 20px;
     flex-wrap: nowrap;
-    margin-top: 17%;
+    margin-top: 28%;
 }
 #watsupp{
     /* margin-left: 80%; */
+}
+#paser{
+
 }
 #watsup_text{
     width: 100%;
     padding-top: 10%;
     padding-left: 5%;
+    font-family: "Evolventa-Regular";
     
 }
 #WWWWW{
@@ -259,7 +265,7 @@ body{
 
 #logotip_main_1{
     margin: 0%;
-    max-width: 149px;
+    max-width: 109px;
     height: 59px;
 }
 #firstContainerDown_main{
@@ -411,7 +417,7 @@ body{
 }
 #Telephone {
     transform: rotate(180px);
-    margin-top: 10%;
+    margin-top: 20%;
 }
 #p-2{
     font-size: 24px;
@@ -440,11 +446,14 @@ body{
 #text-five{
     font-size: 39px;
     margin-bottom: 42px;
+    font-family: 'Evolventa-Regular-Bold';
+    
 
 }
 #four-container-text{
     font-size: 39px;
     margin-bottom: 42px;
+    font-family: 'Evolventa-Regular';
 
 }
 #green-text{
@@ -493,6 +502,7 @@ body{
 }
 #threeContainerLeft{
     padding: 0px;
+    margin-bottom: 7%;
 }
 #button_111{
     width: 221px;
@@ -506,6 +516,7 @@ body{
   padding: 8px 16px;
   font-size: 20px;
   font-style:bold ;
+  font-family: "Evolventa-Regular-Bold";
 }
 #containerSizeThree{
     display: flex;
@@ -568,7 +579,7 @@ body{
     width: auto;
 }
 #threeContainerLeft{
-    padding: 0 70px 0 0;
+    padding: 0 0px 0 0;
 }
 .container-size-four{
    
@@ -612,6 +623,8 @@ display: flex;
 #four-container-text{
     font-size: 50px;
     font-weight: 700;
+    font-family: 'Evolventa-Regular-Bold';
+
 }
 .container-size-four{
     width: 1420px;
@@ -683,10 +696,11 @@ display: flex;
 }
 #four-container-text{
     padding: 70px 0 70px 0;
+    font-family: 'Evolventa-Regular-Bold';
 }
-#h1-three-container{
-    font-size: 24px;
-}
+
+
+
 #green-text{
     padding-bottom: 258px;
 }
@@ -920,9 +934,13 @@ a.menu-111{
     #black{
         flex-wrap: nowrap;
         display: flex;
-        color: green;
+        color: #63A015;
         justify-content: flex-start;
         width: 100%;
+    }
+    #rubr{
+        font-family: "Evolventa-Regular-Bold";
+
     }
 
 
@@ -1225,8 +1243,8 @@ a.menu-111{
 
 @media(max-width: 1256px) {
     #logotip_2{
-        width: 240px;
-        height: 180px;
+        width: 350px;
+        height: 280px;
     }
    #logotip_3{
     max-width: 1000px;
@@ -1261,6 +1279,7 @@ a.menu-111{
     #button_222{
     width: 351px;
     height: 52px;
+    font-family: "Evolventa-Regular-Bold";
         
       border-radius: 20px;
       background: transparent;
@@ -1273,6 +1292,7 @@ a.menu-111{
       margin-bottom: 10px;
       margin-top: 10px;
       text-decoration: none;
+
       
 
     }
@@ -1320,6 +1340,7 @@ a.menu-111{
         align-items: center;
         justify-content: flex-start;
     }
+    
     #firstContainerDown1{
         justify-content: center;
         align-items: center;
@@ -1418,8 +1439,9 @@ a.menu-111{
 }
 #threeContainerLeft{
     display: flex;
-    align-items: center;
+    
     flex-direction: column;
+    justify-content: flex-start;
 }
 #logotip_main_main{
     display: flex;
@@ -1463,17 +1485,17 @@ a.menu-111{
         /* margin-right: 50%; */
     }
 #h1-three-container{
-    padding-left: 2%;
+   
 }
 #h1-three-container-text{
-    padding-left: 4%;
-    padding-bottom: 3%;
+    
+    padding-bottom: 4%;
 }
 #firstContainerRightNAme-top{
     padding: 125px 0 45px 6%;
    }
    #h1-three-container-text{
-    padding-left: 11%;
+   
    }
 #four-container-text{
     padding-left: 10%;
@@ -1487,21 +1509,25 @@ a.menu-111{
 }
 
 #h1-three-container{
-    font-size: 38px;
-    padding-left: 10%;
+    font-size: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    font-family: 'Evolventa-Regular-Bold';
 }
 #four-container-text{
     font-size: 45px;
+    font-family: 'Evolventa-Regular-Bold';
 }
 
 
 }
 @media(max-width: 435px) {
     #sixContainerLeft{
-        font-size: 14px;
+        font-size: 24px;
     }
     #sixContainerRight{
-        font-size: 14px;
+        font-size: 24px;
     }
     #watsupp_class{
         display: flex;
@@ -1532,7 +1558,8 @@ a.menu-111{
         
     }
     #h1-three-container-text{
-        font-size: 17px;
+        font-size: 20px;
+        width: 100%;
     }
     #watsup_text{
         display: flex;

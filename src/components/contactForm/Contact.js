@@ -36,7 +36,7 @@ const Contact = () => {
   return (
     <div id="form_otprav_first" >
       <form id="form_otprav_main"  >
-        <div  >
+        <div id="classONclass"  >
             <input 
               className="inputLeft"
               type="email"
@@ -45,8 +45,8 @@ const Contact = () => {
               value={values.email}
               onChange={handleChange}
             />
-        </div>
-        <div  >
+        
+        
           <input id="form_otprav-two"
             type="text"
             name="message"
@@ -57,7 +57,7 @@ const Contact = () => {
         </div>
         
       </form>
-      <button onClick={onSubmit} id="button-11"> Продолжить </button>
+      <button onClick={onSubmit} id="button-11"> ОТПРАВИТЬ ЗАЯВКУ </button>
     </div>
   );
 };
