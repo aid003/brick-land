@@ -1,6 +1,6 @@
 "use client";
 // import './reset.css'
-import { YandexMetricaProvider } from 'next-yandex-metrica'
+import { YandexMetricaProvider, useMetrica } from 'next-yandex-metrica'
 import styless from "./reset.css";
 import styles from "./globals.css";
 import style from "./page.module.css";
@@ -57,6 +57,7 @@ import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [activeBurger, setActiveBurger] = useState(false);
+  const { reachGoal } = useMetrica();
 
   const showBurger = () => {
     activeBurger ? setActiveBurger(false) : setActiveBurger(true);
@@ -190,7 +191,7 @@ export default function Home() {
               <br />
               ВЫБОР ИЗ ШЕСТИ ПОПУЛЯРНЫХ БРЕНДОВ В НАЛИЧИИ
             </p>
-            <a id="linkAr" href="#threeContainerLeft">
+            <a id="linkAr" href="#threeContainerLeft" onClick={()=>{reachGoal('form_open')}}>
               <button className={styles.button_111} id="button_111">
                 РАССЧИТАТЬ
               </button>
@@ -201,7 +202,7 @@ export default function Home() {
             <Image alt="Brend" id="logotip_1" src={kirpich} />
           </div>
           <div className={styles.firstbuttcontainer} id="firstbuttcontainer">
-            <a id="linkArror" href="#threeContainerLeft">
+            <a id="linkArror" href="#threeContainerLeft" onClick={()=>{reachGoal('form_open')}}>
               <button className={styles.button_222} id="button_222">
               РАССЧИТАТЬ{" "}
               </button>

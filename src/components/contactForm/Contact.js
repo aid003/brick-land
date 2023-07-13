@@ -2,16 +2,18 @@
 import { useEffect, useState } from "react";
 import { sendContactForm } from "../utils/api";
 
-import styles from './contact.css';
+
+import { useMetrica } from 'next-yandex-metrica';
 const initialValues = {
   email: "",
-  message: ""
+  message: "",
 };
 
 const initialState = { values: initialValues };
 
 const Contact = () => {
   const [state, setState] = useState(initialState);
+  const { reachGoal } = useMetrica();
 
   const { values } = state;
 
@@ -30,24 +32,29 @@ const Contact = () => {
     setState((prev) => ({
       ...prev,
     }));
-    await sendContactForm(values);
+
+    try {
+      await sendContactForm(values);
+    } catch (error) {
+      reachGoal("form_error");
+    }
   };
 
   return (
-    <div id="form_otprav_first" >
-      <form id="form_otprav_main"  >
-        <div id="classONclass"  >
-            <input 
-              className="inputLeft"
-              type="email"
-              name="email"
-              placeholder="Ваше имя"
-              value={values.email}
-              onChange={handleChange}
-            />
-        
-        
-          <input id="form_otprav-two"
+    <div id="form_otprav_first">
+      <form id="form_otprav_main">
+        <div id="classONclass">
+          <input
+            className="inputLeft"
+            type="email"
+            name="email"
+            placeholder="Ваше имя"
+            value={values.email}
+            onChange={handleChange}
+          />
+
+          <input
+            id="form_otprav-two"
             type="text"
             name="message"
             placeholder="+7 123-45-67-89"
@@ -55,9 +62,11 @@ const Contact = () => {
             onChange={handleChange}
           />
         </div>
-        
       </form>
-      <button onClick={onSubmit} id="button-11"> ОТПРАВИТЬ ЗАЯВКУ </button>
+      <button onClick={onSubmit} id="button-11">
+        {" "}
+        ОТПРАВИТЬ ЗАЯВКУ{" "}
+      </button>
     </div>
   );
 };

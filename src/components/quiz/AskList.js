@@ -7,6 +7,7 @@ import { sendContactForm } from "../utils/api";
 
 import logo from "../../../photo/photo-6/WIN.png";
 import Image from "next/image";
+import { useMetrica } from "next-yandex-metrica";
 
 const initialValues = {
   name: "",
@@ -99,8 +100,8 @@ const AskList = () => {
           picture: logo,
           answerTextWithOutCheckBox: "Мы свяжемся с вами в ближайшее время",
         },
-      ]
-    }
+      ],
+    },
   ];
 
   const [state, setState] = useState(initialState);
@@ -114,6 +115,8 @@ const AskList = () => {
   const [invalidName, setInvalidName] = useState(false);
   const [invalidPhone, setInvalidPhone] = useState(false);
 
+  const { reachGoal } = useMetrica();
+
   const changeChoseHandler = (text) => {
     if (answer.includes(text)) {
       answer.splice(answer.indexOf(text), 1);
@@ -122,7 +125,7 @@ const AskList = () => {
     }
   };
 
-  const nextQuestionHandler = (e) => {YandexMetrika(94142911,'reachGoal','form_open')
+  const nextQuestionHandler = (e) => {
     // e.preventDefault();
     console.log(currentQuestion, questions.length, lastQuestion);
     if (currentQuestion < questions.length - 1) {
@@ -161,7 +164,9 @@ const AskList = () => {
 
     state.values.name.length > 0 ? setInvalidName(false) : setInvalidName(true);
 
-    state.values.phone.length > 0 ? setInvalidPhone(false) : setInvalidPhone(true)
+    state.values.phone.length > 0
+      ? setInvalidPhone(false)
+      : setInvalidPhone(true);
   }, [state]);
 
   const onSubmit = async (e) => {
@@ -172,7 +177,12 @@ const AskList = () => {
     }));
     nextQuestionHandler();
     setLastQuestion(false);
-    await sendContactForm(values);
+    try {
+      await sendContactForm(values);
+    } catch (error) {
+      reachGoal("form_error");
+    }
+    reachGoal("form_send");
   };
 
   return (
@@ -182,7 +192,6 @@ const AskList = () => {
           <div className={styles.lineContainer} key={300 + i}>
             {i != 1 ? <span className={styles.line} key={200 + i}></span> : ""}
             <p
-              
               className={
                 currentQuestion + 1 === i ? styles.active : styles.number
               }
@@ -195,7 +204,7 @@ const AskList = () => {
       <p className={styles.questionText}>
         {questions[currentQuestion].questionText}
       </p>
-      <div >
+      <div>
         {questions[currentQuestion].answer.map((i) => (
           <div
             key={i.id}
@@ -218,13 +227,19 @@ const AskList = () => {
               }}>
               {i?.answerText || i?.answerTextWithOutCheckBox}
               {i?.picture && (
-               <p className={styles.Akitem_img}> <Image key={"picture"} alt="БЛАГОДАРНОСТЬ" width={100}  src={logo} /></p>
+                <p className={styles.Akitem_img}>
+                  {" "}
+                  <Image
+                    key={"picture"}
+                    alt="БЛАГОДАРНОСТЬ"
+                    width={100}
+                    src={logo}
+                  />
+                </p>
               )}
             </p>
             {i?.other && (
               <input
-                
-
                 placeholder={i.answerTextInput}
                 className={invalidCountry ? styles.inputError : styles.input}
                 name={i.other}
@@ -238,13 +253,15 @@ const AskList = () => {
           <button
             className={styles.submitButton}
             type="submit"
-            onClick={(e) => {invalidPhone && invalidName ? ()=>{} : onSubmit(e)}}>
+            onClick={(e) => {
+              invalidPhone && invalidName ? () => {} : onSubmit(e);
+            }}>
             Далее →
           </button>
         ) : currentQuestion + 1 != questions.length ? (
           <button
             className={styles.nextButton}
-            onClick={(e) => { 
+            onClick={(e) => {
               !invalidCountry
                 ? nextQuestionHandler(e)
                 : currentQuestion != 3
