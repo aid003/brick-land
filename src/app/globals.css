@@ -25,6 +25,19 @@ body{
 #h1-three-containerХ{
     font-family: 'Evolventa-Regular-Bold';
 }
+#main_id{
+    display: flex;
+    align-self: flex-start;
+    justify-content: flex-start;
+    
+    
+    width: 100%;
+}
+
+#id{
+    color: #63A015;
+    padding-left: 10px;
+}
 
 
 
@@ -340,6 +353,9 @@ body{
     font-weight: 600;
     color: #787878;
 
+}
+#logs{
+    color: white;
 }
 .first-container-down{
     display: flex;
@@ -829,13 +845,17 @@ display: flex;
     margin-bottom: 50px;
 
    }
+   #id{
+    display: inline;
+   }
    
 
    /* #firstContainerPanelContent{
     max-height: 85px;
    } */
    #logotip_main_main{
-	margin-top: 11vh;
+	/* margin-top: 11vh; */
+    margin-top: 4vh;
     max-width: 704px;
     max-height: 178px;
     
@@ -1492,7 +1512,7 @@ a.menu-111{
     padding-bottom: 4%;
 }
 #firstContainerRightNAme-top{
-    padding: 125px 0 45px 6%;
+    padding: 50px 0 45px 6%;
    }
    #h1-three-container-text{
    
@@ -1509,7 +1529,7 @@ a.menu-111{
 }
 
 #h1-three-container{
-    font-size: 30px;
+    font-size: 32px;
     display: flex;
     flex-wrap: nowrap;
     white-space: nowrap;
@@ -1551,7 +1571,7 @@ a.menu-111{
     }
     #firstContainerRightNAme-top{
         display: flex;
-        font-size: 17px;
+        font-size: 14px;
         font-weight: 600;
         align-self: center;
         
@@ -1576,6 +1596,12 @@ a.menu-111{
         height: 330px;
     }
 
+
+}
+@media(max-width: 435px) {
+    #logotip_1{
+        width: 220px;
+        height: 250px}
 
 }
 

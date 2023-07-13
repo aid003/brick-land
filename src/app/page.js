@@ -123,13 +123,13 @@ export default function Home() {
                       id="logotip_main"
                       src={Min_message}
                     />
-                    <a id="menu-1" href="">
+                    <a id="menu-1"  href=" mailto:rubrick@list.ru">
                       rubrick@list.ru
                     </a>
                   </li>
                   <li id="menu-phone-container-2">
                     <Image alt="" id="logotip_main" src={Min_ph} />
-                    <a id="menu-101" href="">
+                    <a id="menu-101" href=""onClick={watsAppHandler}>
                       +7 937 512-35-50
                     </a>
                   </li>
@@ -231,7 +231,7 @@ export default function Home() {
               <br />
               блоков с доставкой до вашего
               <br />
-              <b id="black">объекта c выгодой до 20%</b>
+              <span id='main_id'>объекта  <span id='id'> c выгодой до 20%</span></span>
             </p>
           </div>
           <AskList id="Askitlist001"></AskList>
@@ -309,8 +309,10 @@ export default function Home() {
             <p id="rubr">ООО “РуБрик”</p>
             <p>г. Москва, ул. Николоямская</p>
             <br /> <p>д. 43, к. 4, пом. 3/9</p>
-            <Image id="log" alt="Иконка бренда" src={six_2} />
-          </div>
+            <a  href ="" onClick={watsAppHandler}>
+              <Image id="log" alt="Иконка бренда" src={six_2} />
+            </a>
+            </div>
 
           <div id="sixContainerRight" className={styles.sixContainerRight}>
             <p>
@@ -318,9 +320,11 @@ export default function Home() {
               <br /> КПП: 770901001
               <br /> ОГРН: 1237700105323
             </p>
-            <Image id="log" alt="Иконка бренда" src={six_1} />
-            <p>rubrick@list.ru</p>
-            <p>+7 937 512-35-50</p>
+            <a  href ="" onClick={watsAppHandler}>
+              <Image id="log" alt="Иконка бренда" src={six_1} />
+            </a>
+            <p><a id ="logs" href ="mailto:rubrick@list.ru">rubrick@list.ru</a></p>
+            <p > <a id ="logs" href ="" onClick={watsAppHandler}>+7 937 512-35-50</a> </p>
           </div>
         </div>
       </div>
