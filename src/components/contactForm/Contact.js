@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { sendContactForm } from "../utils/api";
 
-
+import styles from "./contact.css";
 import { useMetrica } from 'next-yandex-metrica';
 const initialValues = {
   email: "",
